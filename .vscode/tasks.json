@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		/* ... */
+		{
+			"label": "run-debug-android",
+			"command": "dotnet",
+			"type": "shell",
+			"args": [
+				"build",
+				"--no-restore",
+				"-t:Run",
+				"${workspaceFolder}/${workspaceFolderBasename}.csproj",
+				"-p:Configuration=Debug",
+				"-p:AndroidAttachDebugger=true",
+				"-p:AndroidSdbHostPort=10000"
+			],
+			"problemMatcher": "$msCompile"
+		}
+	]
+}

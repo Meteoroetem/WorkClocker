@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/homeButton"
+      android:enabled="true"
+      android:icon="@drawable/homeP"
+      android:title="Home"/>
+  <item
+      android:id="@+id/manualAddButton"
+      android:enabled="true"
+      android:icon="@drawable/addP"
+      android:title="Add Manually"/>
+  <item
+      android:id="@+id/settingsButton"
+      android:enabled="true"
+      android:icon="@drawable/settingsP"
+      android:title="Settings"/>
+</menu>

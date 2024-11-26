@@ -1,0 +1,3 @@
+AndroidBuild.props
+bin/*
+obj/*
