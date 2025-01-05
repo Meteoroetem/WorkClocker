@@ -1,23 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using AndroidX.Room;
+using Java.Sql;
 
 namespace WorkClocker
 {
-    public class WorkDay
+    [Entity(TableName ="work_days")]
+    public class WorkDay(DateTime enterTime, DateTime exitTime, int hourlyPay)
     {
-        public DateOnly Date {get; init;}
-        public TimeSpan EnterTime {get; init;}
-        public TimeSpan ExitTime {get; init;}
-        public TimeSpan DayLength {
-            get => ExitTime - EnterTime;
-        }
-        public WorkDay(DateOnly date, TimeSpan enterTime, TimeSpan exitTime){
-            Date = date;
-            EnterTime = enterTime;
-            ExitTime = exitTime;
-            
-        }
+        [PrimaryKey]
+        public int id;
+        DateTime _enterTime = enterTime;
+        DateTime _exitTime = exitTime;
+        int _hourlyPay = hourlyPay;
+        
+
+        public DateTime EnterTime {get => _enterTime;}
+        public DateTime ExitTime {get => _exitTime;}
+        public int HourlyPay {get => _hourlyPay;}
+        public TimeSpan WorkTime {get => _exitTime - _enterTime;}
     }
 }
