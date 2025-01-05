@@ -2,16 +2,16 @@
   <item
       android:id="@+id/homeButton"
       android:enabled="true"
-      android:icon="@drawable/homeP"
+      android:icon="@drawable/home"
       android:title="Home"/>
   <item
       android:id="@+id/manualAddButton"
       android:enabled="true"
-      android:icon="@drawable/addP"
+      android:icon="@drawable/add"
       android:title="Add Manually"/>
   <item
       android:id="@+id/settingsButton"
       android:enabled="true"
-      android:icon="@drawable/settingsP"
+      android:icon="@drawable/settings"
       android:title="Settings"/>
 </menu>

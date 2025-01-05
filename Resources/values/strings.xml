@@ -2,4 +2,5 @@
     <string name="app_name">WorkClocker</string>
     <string name="app_text">Hello, Android!</string>
     <string name="label">Label</string>
+    <string name="currentMonth">none</string>
 </resources>
