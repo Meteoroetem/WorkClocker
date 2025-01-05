@@ -21,6 +21,7 @@
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.4" />
     <PackageReference Include="Xamarin.AndroidX.CoordinatorLayout" Version="1.2.0.18" />
     <PackageReference Include="Xamarin.AndroidX.Core" Version="1.15.0.1" />
+    <PackageReference Include="Xamarin.AndroidX.Room.Runtime" Version="2.6.1.8" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.12.0.1" />
   </ItemGroup>
   <Import Project="AndroidBuild.props" />
