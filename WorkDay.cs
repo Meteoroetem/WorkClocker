@@ -1,22 +1,20 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using AndroidX.Room;
-using Java.Sql;
+using SQLite;
 
 namespace WorkClocker
 {
-    [Entity(TableName ="work_days")]
+    [Table("workdays")]
     public class WorkDay(DateTime enterTime, DateTime exitTime, int hourlyPay)
     {
-        [PrimaryKey]
-        public int id;
         DateTime _enterTime = enterTime;
         DateTime _exitTime = exitTime;
         int _hourlyPay = hourlyPay;
         
 
-        public DateTime EnterTime {get => _enterTime;}
-        public DateTime ExitTime {get => _exitTime;}
-        public int HourlyPay {get => _hourlyPay;}
-        public TimeSpan WorkTime {get => _exitTime - _enterTime;}
+        [PrimaryKey,AutoIncrement,Column("id")]
+        public int Id {get; set;}
+        [Column("enter_time")]public DateTime EnterTime {get => _enterTime;}
+        [Column("exit_time")]public DateTime ExitTime {get => _exitTime;}
+        [Column("hourly_pay")]public int HourlyPay {get => _hourlyPay;}
+        [Column("work_time")]public TimeSpan WorkTime {get => _exitTime - _enterTime;}
     }
 }

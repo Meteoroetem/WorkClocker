@@ -1,11 +1,9 @@
-using Android.Net.Http;
 using Android.Views;
 using AndroidX.AppCompat.App;
-using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.BottomSheet;
 using Android.Util;
-using AndroidX.Window;
-using System.ComponentModel;
+using SQLite;
+
 namespace WorkClocker;
 
 [Activity(Label = "@string/app_name", MainLauncher = true)]
@@ -41,6 +39,13 @@ public class MainActivity : AppCompatActivity
         // Set our view from the "main" layout resource
         SetContentView(Resource.Layout.activity_main);
 
+        string dbPath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+            "workdays.db3"
+        );
+
+        var db = new SQLiteConnection(dbPath);
+        db.CreateTable<WorkDay>();
 
         var bottomSheet = FindViewById<FrameLayout>(Resource.Id.bottomSheet);
         var sheetBehaviour = BottomSheetBehavior.From(bottomSheet!);
